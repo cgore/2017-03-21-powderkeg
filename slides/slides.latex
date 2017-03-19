@@ -234,7 +234,7 @@
 
 
 \begin{slide}
-  \h{Clojure is Lisp}
+  \h{Clojure is a lisp.}
 
   \fullSlideImage{other-lisp.eps}
 \end{slide}
@@ -255,9 +255,16 @@
 
 
 \begin{slide}
-  \h{But Scala isn't Lisp.}
+  \h{But Scala isn't a lisp.}
 
   \fullSlideImage{mccarthy.eps}
+\end{slide}
+
+
+\begin{slide}
+  \h{Apache Spark is really cool, but it's in Scala.}
+
+  \fullSlideImage{spark-bluebg.eps}
 \end{slide}
 
 
