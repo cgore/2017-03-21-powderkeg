@@ -269,6 +269,19 @@
 
 
 \begin{slide}
+  \h{Apache Spark is an open source cluster computing framework.}
+
+  \begin{itemize}
+  \item Based on the RDD, resilient distributed dataset.
+  \item An RDD is basically a distributed read-only multiset.
+  \item RDDs allow for the power of MapReduce but with a lot more flexibility.
+  \item RDDs can be treated as shared memory.
+  \item This allows for iterative algorithms, not just map and then reduce operations.
+  \end{itemize}
+\end{slide}
+
+
+\begin{slide}
   \h{What's a Clojurian to do?}
 
   \begin{itemize}
