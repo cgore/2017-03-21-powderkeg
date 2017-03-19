@@ -269,6 +269,19 @@
 
 
 \begin{slide}
+  \h{What's a Clojurian to do?}
+
+  \begin{itemize}
+  \item Use Scala?  Nope.
+  \item Here at Climate, we made \texttt{clj-spark} well before I came to work
+    here, which was a good start.
+  \item This eventually became Flambo, which is pretty good, but doesn't
+    exactly feel like Clojure.
+  \end{itemize}
+\end{slide}
+
+
+\begin{slide}
   \SlideSection{Questions?}
 \end{slide}
 
