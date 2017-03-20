@@ -295,6 +295,78 @@
 
 
 \begin{slide}
+  \h{Let's make another library!}
+
+  \begin{itemize}
+  \item Igor Ges and Christophe Grand introduced a new library called
+    \textit{Powderkeg} to work with Apache Spark in Clojure.
+  \item It looks like normal Clojure code, thanks to transducers!
+  \item But \textellipsis it's still really early alpha.
+  \end{itemize}
+\end{slide}
+
+
+\begin{slide}
+  \h{It looks almost like normal Clojure.}
+
+\begin{lstlisting}
+;; 'normal' Clojure
+(into [] (map #(* % %))
+              [1 2 3 4 5])
+
+;; Flambo
+(-> (f/parallelize sc [1 2 3 4 5])
+    (f/map (f/fn [x] (* x x)))
+    f/collect)
+
+;; Powderkeg
+(into [] (keg/rdd [1 2 3 4 5]
+                  (map #(* % %))))    
+\end{lstlisting}
+\end{slide}
+
+
+\begin{slide}
+  \h{So what exactly do you do with a Spark cluster?}
+
+  \begin{itemize}
+  \item Make a big list of stuff, and RDD.
+  \item Map on that RDD \textellipsis
+  \item Filter down that RDD \textellipsis
+  \item Reduce on that RDD \textellipsis
+  \item \textellipsis
+  \end{itemize}
+
+  Until you have the final result of your computation.  But, all this mapping,
+  reducing, and filtering has occurred on multiple machines, not just one
+  machine.
+\end{slide}
+
+
+\begin{slide}
+  \h{Why we care at Climate (besides it just being cool.)}
+
+  \begin{itemize}
+  \item Most of our imagery generation is quite amenable to this sort of
+    parallellization.
+  \item We currently have to run on somewhat large (and expensive) instances
+    because we currently operate on a per-field basis.
+  \item The instance type required for a 100-acre field is a lot cheaper than
+    what we need to calculate on a 3,000-acre field.
+  \item But if we can span across multiple instances per-field, then we can use
+    smaller and cheaper instances, just more of them.
+  \end{itemize}
+\end{slide}
+
+
+\begin{slide}
+  \h{Sample Veg Map}
+
+  \fullSlideImage{veg-map.eps}
+\end{slide}
+
+
+\begin{slide}
   \SlideSection{Questions?}
 \end{slide}
 
