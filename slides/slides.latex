@@ -344,7 +344,8 @@
 
 
 \begin{slide}
-  \h{Why we care at Climate (besides it just being cool.)}
+  \h{Why we care at Climate\\
+    \textit{(besides it just being cool.)}}
 
   \begin{itemize}
   \item Most of our imagery generation is quite amenable to this sort of
@@ -360,6 +361,14 @@
 
 
 \begin{slide}
+  \h{Why \textit{you} care at \textit{YourMegaCorp, Inc.}\\
+    \textit{(besides it just being cool.)}}
+
+  \fullSlideImage{big-data.eps}
+\end{slide}
+
+
+\begin{slide}
   \h{Sample Vegetation Map}
 
   \fullSlideImage{veg-map.eps}
@@ -370,39 +379,54 @@
   \h{Spark SQL -- it's a work in progress.}
 
   \texttt{https://github.com/HCADatalab/powderkeg/tree/sql}
+
+\begin{lstlisting}[language=Java]
+// Select customer name column
+dfCustomers.select("name").show()
+// Select customer name and city columns
+dfCustomers.select("name", "city").show()
+// Select a customer by id
+dfCustomers.filter(
+  dfCustomers("customer_id").equalTo(500)
+).show()
+// Count the customers by zip code
+dfCustomers.groupBy("zip_code").count().show()
+\end{lstlisting}
 \end{slide}
 
 
 \begin{slide}
   \h{Spark Streaming -- eventually, I don't think there's any work on that yet.}
+
+  You can implement a batch-oriented lambda architecture in this, which is
+  something that I need for Thinking Bicycle.
+
+  \fullSlideImage{logo-v3.eps}
 \end{slide}
 
 
 \begin{slide}
-  \h{MLlib Machine Learning Library}
-
-  Machine learning is cool.
-  I don't know if anyone is working on that, but I really want it.
+  \h{MLlib: Machine learning is cool, and there's a library for that on top of
+    Spark.  I really want it, so I'll probably make it.}
 
   \fullSlideImage{terminator.eps}
 \end{slide}
 
 
 \begin{slide}
-  \h{MLlib's SVMs, support vector machines, more specifically.}
+  \h{MLlib's SVMs \textit{(support vector machines)} more specifically.  Because
+    clouds suck when you've only got civilian satellites.}
 
   \fullSlideImage{field-clouds.eps}
 \end{slide}
 
 
 \begin{slide}
-  \h{GraphX, a graph processing framework on top of Apache Spark.}
+  \h{GraphX, a graph processing framework on top of Apache Spark, also looks
+    pretty interesting and useful.}
 
-  I don't know if anyone is working on that, but it looks interesting too.
-
-  \fullSlideImage{graphx.eps}
+  \fullSlideImage{graphx-bluebg.eps}
 \end{slide}
-
 
 
 \begin{slide}
