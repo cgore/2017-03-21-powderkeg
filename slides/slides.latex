@@ -369,7 +369,15 @@
 
 
 \begin{slide}
-  \h{Sample Vegetation Map}
+  \h{Actually, there's various limits to the sizes of things, so
+    \textit{biggish} data.}
+
+  \fullSlideImage{spoon-bluebg.eps}
+\end{slide}
+
+
+\begin{slide}
+  \h{Pictures of corn \textellipsis \textit{from space.}}
 
   \fullSlideImage{veg-map.eps}
 \end{slide}
