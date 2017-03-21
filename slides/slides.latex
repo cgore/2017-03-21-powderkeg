@@ -360,10 +360,49 @@
 
 
 \begin{slide}
-  \h{Sample Veg Map}
+  \h{Sample Vegetation Map}
 
   \fullSlideImage{veg-map.eps}
 \end{slide}
+
+
+\begin{slide}
+  \h{Spark SQL -- it's a work in progress.}
+
+  \texttt{https://github.com/HCADatalab/powderkeg/tree/sql}
+\end{slide}
+
+
+\begin{slide}
+  \h{Spark Streaming -- eventually, I don't think there's any work on that yet.}
+\end{slide}
+
+
+\begin{slide}
+  \h{MLlib Machine Learning Library}
+
+  Machine learning is cool.
+  I don't know if anyone is working on that, but I really want it.
+
+  \fullSlideImage{terminator.eps}
+\end{slide}
+
+
+\begin{slide}
+  \h{MLlib's SVMs, support vector machines, more specifically.}
+
+  \fullSlideImage{field-clouds.eps}
+\end{slide}
+
+
+\begin{slide}
+  \h{GraphX, a graph processing framework on top of Apache Spark.}
+
+  I don't know if anyone is working on that, but it looks interesting too.
+
+  \fullSlideImage{graphx.eps}
+\end{slide}
+
 
 
 \begin{slide}
