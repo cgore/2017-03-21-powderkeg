@@ -241,7 +241,7 @@
 
 
 \begin{slide}
-  \h{Clojure is Lisp on the JVM.}
+  \h{Clojure is a lisp on the JVM.}
 
   \fullSlideImage{java-yoda.eps}
 \end{slide}
@@ -384,7 +384,7 @@
 
 
 \begin{slide}
-  \h{Spark SQL -- it's a work in progress.}
+  \h{Spark SQL -- there's work in progress to move this over.}
 
   \texttt{https://github.com/HCADatalab/powderkeg/tree/sql}
 
@@ -434,6 +434,76 @@ dfCustomers.groupBy("zip_code").count().show()
     pretty interesting and useful.}
 
   \fullSlideImage{graphx-bluebg.eps}
+\end{slide}
+
+
+\begin{slide}
+  \h{RDDs have \textit{actions} which return values (1/2).}
+
+  \begin{description}
+  \item[reduce] aggregate the elements with some function \textit{(think
+    summation and the \texttt{+} function)}
+  \item[collect] return a normal array
+  \item[count] how many items in the RDD
+  \item[first] the first item in the RDD
+  \item[take] return a normal array of $n$ items
+  \item[takeSample] random sampling of $n$ elements
+  \item[takeOrdered] first $n$ elements based on an ordering
+  \end{description}
+\end{slide}
+
+\begin{slide}
+  \h{RDDs have \textit{actions} which return values (2/2).}
+
+  \begin{description}
+  \item[saveAsTextFile] write out a simple text file
+  \item[saveAsSequenceFile] write out a Hadoop SequenceFile
+  \item[saveAsObjectFile] write out a simple serialized file
+  \item[countByKey] for $(k,v)$ RDDs, return $(k,n)$ of counts
+  \item[foreach] run a function over the entire RDD for side effects
+  \end{description}
+\end{slide}
+
+
+\begin{slide}
+  \h{RDDs have \textit{transformations} which return new RDDs (1/3).}
+
+  \begin{description}
+  \item[map] new RDD by mapping $f$
+  \item[filter] new RDD filtered for $f$ is true
+  \item[flatMap] non-bijective map (non-1:1)
+  \item[mapPartitions] like map, but running separately on each partition (block) of the RDD
+  \item[mapPartitionsWithIndex] like \textit{mapPartitions}, but also with an integer index of the partition
+  \item[sample] random sample of the RDD
+  \end{description}
+\end{slide}
+
+\begin{slide}
+  \h{RDDs have \textit{transformations} which return new RDDs (2/3).}
+
+  \begin{description}
+  \item[union] union of two RDDs
+  \item[intersection] intersection of two RDDs
+  \item[distinct] the distinct (unique) elements as a new RDD
+  \item[groupByKey] $(k,v)$ to $(k, \{v_1, v_2, \ldots\})$
+  \item[reduceByKey] like reduce, but on a per-key basis
+  \item[aggregateByKey] per-key merge of the RDD
+  \item[sortByKey] an RDD sorted by the keys
+  \end{description}
+\end{slide}
+
+\begin{slide}
+  \h{RDDs have \textit{transformations} which return new RDDs (3/3).}
+
+  \begin{description}
+  \item[join] $(k,v)$ and $(k,w)$ become $(k,(v,w))$
+  \item[cogroup] groups two RDDs together on their shared keys
+  \item[cartesian] this is the reason why some people shouldn't be allowed near databases
+  \item[pipe] pipe through a shell command
+  \item[coalesce] reduce the number of partitions (blocks)
+  \item[repartition] set the number of partitions (blocks)
+  \item[repartionAndSortWithinPartitions] more efficient than a repartition and then sort
+  \end{description}
 \end{slide}
 
 
