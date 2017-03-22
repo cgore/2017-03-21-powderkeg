@@ -16,3 +16,4 @@ In this talk, I'll give a basic introduction to Powderkeg, a new library to make
 - Powderkeg: Teaching Clojure to Spark (Clojure/conj 2016): https://www.youtube.com/watch?v=OxUHgP4Ox5Q
 - clj-spark: https://github.com/TheClimateCorporation/clj-spark
 - Flambo: https://github.com/yieldbot/flambo
+- Good business/manager level overview of Apache Spark: http://cacm.acm.org/magazines/2016/11/209116-apache-spark/fulltext
